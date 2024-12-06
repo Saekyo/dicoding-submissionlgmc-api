@@ -1,0 +1,6 @@
+{  
+ "backend-service-url": "http://34.101.218.21:3000",
+ "frontend-service-url": "http://submissionmlgc-reski.et.r.appspot.com",
+ "project-id": "submissionmlgc-reski",
+ "bucket-name": "submissionlgmc-model"
+}

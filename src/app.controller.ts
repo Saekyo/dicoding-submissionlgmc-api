@@ -38,7 +38,7 @@ export class AppController {
     }
   }
 
-  @Get('histories')
+  @Get('/predict/histories')
   async getAllPredictionHistories() {
     try {
       return await this.appService.getAllPredictionHistories();
