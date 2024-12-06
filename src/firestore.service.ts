@@ -8,7 +8,7 @@ export class FirestoreService {
   async storeData(id: string, data: any) {
     try {
       const db = new Firestore();
-      const predictCollection = db.collection('prediction');
+      const predictCollection = db.collection('predictions');
       await predictCollection.doc(id).set(data);
       this.logger.log(`Data with ID ${id} stored successfully`);
     } catch (error) {
@@ -21,7 +21,7 @@ export class FirestoreService {
     try {
       const db = new Firestore();
 
-      const snapshot = await db.collection('prediction').get();
+      const snapshot = await db.collection('predictions').get();
       if (snapshot.empty) {
         this.logger.warn('No data found in the prediction collection');
         return [];
