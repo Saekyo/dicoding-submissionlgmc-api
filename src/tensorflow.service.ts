@@ -36,16 +36,11 @@ export class TensorflowService implements OnModuleInit {
     }
 
     try {
-      const checkImg = tf.node.decodeJpeg(imageBuffer, 3);
-      if (checkImg.shape[2] !== 3) {
+      const checkImage = tf.node.decodeImage(imageBuffer);
+
+      if (checkImage.shape.length !== 3 || checkImage.shape[2] !== 3) {
         throw new BadRequestException();
       }
-
-      const [height, width] = checkImg.shape;
-      if (height !== 224 || width !== 224) {
-        throw new BadRequestException();
-      }
-
       const tensor = tf.node
         .decodeJpeg(imageBuffer, 3)
         .resizeNearestNeighbor([224, 224])

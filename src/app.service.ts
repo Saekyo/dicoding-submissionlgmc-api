@@ -29,7 +29,7 @@ export class AppService {
         createdAt: new Date().toISOString(),
       };
 
-      await this.firestoreService.storeData(id, result);
+      // await this.firestoreService.storeData(id, result);
 
       return {
         status: 'success',
